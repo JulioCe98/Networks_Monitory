@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import javax.net.ssl.SSLSocketFactory;
 public class SSLClient {
-public static final String TRUSTTORE_LOCATION = "c:Program Files\\Java\\jdk1.8.0_221\\bin\\serverTrustedCerts.jks";
+public static final String TRUSTTORE_LOCATION = "c:\\Program Files\\Java\\jdk1.8.0_221\\bin\\clientTrustedCerts.jks";
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,7 +16,7 @@ public static final String TRUSTTORE_LOCATION = "c:Program Files\\Java\\jdk1.8.0
 		
 		Socket socket;
 		try {
-			socket = sf.createSocket("localhost", 8000);
+			socket = sf.createSocket("127.0.0.1", 8000);
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			Scanner scanner = new Scanner(System.in);
